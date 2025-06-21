@@ -13,7 +13,7 @@ def index(request):
         if form.is_valid():
             form.save()
             
-        return redirect('/')
+            return redirect('/')
 
     return render(request, 'index.html', context)
 
@@ -22,9 +22,13 @@ def updateTask(request, pk):
     form = TaskForm(instance=task)
     
     if request.method == 'POST':
-        form = TaskForm(request.POST)
+        form = TaskForm(request.POST, instance=task)
 
         if form.is_valid():
             form.save()
+            
+            return redirect('/')
+        
+    context = {'TaskForm': form}
 
-        return redirect('/')
+    return render(request,'update-task.html', context)
