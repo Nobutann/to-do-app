@@ -52,6 +52,8 @@ Projeto de uma lista de tarefas feito com django que permite o usuário gerencia
     python manage.py runserver
     ```
 
+---
+
 ## Créditos
 
 Feito por **Luiz Gonzaga**
